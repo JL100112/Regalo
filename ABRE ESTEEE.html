@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños para mi Mejor Amigo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #container {
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  #imageContainer {
+    margin-bottom: 20px;
+  }
+
+  #birthdayImage {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  #finalText {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 25px;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #2980b9;
+  }
+</style>
+</head>
+<body>
+<audio autoplay loop>
+  <source src="tu_cancion.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div id="container">
+  <h1>¡Feliz Cumpleaños para mi Mejor Amigo!</h1>
+  <p>Muchas felicidades alan gracias por ser mi mejor amigo.</p>
+  <div id="imageContainer">
+    <img id="birthdayImage" src="birthday1.jpg" alt="Feliz Cumpleaños">
+  </div>
+  <p id="finalText" style="display:none;">¡Feliz Cumpleaños! Que te la pases increible</p>
+</div>
+
+<script>
+const images = [
+  "birthday1.jpg",
+  "birthday2.jpg",
+  "birthday3.jpg",
+  "birthday4.jpg",
+  "birthday5.jpg",
+  "birthday6.jpg",
+  "birthday7.jpg",
+  "birthday8.jpg",
+  "birthday9.jpg",
+  "birthday10.jpg"
+];
+
+let currentIndex = 0;
+
+function changeImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  document.getElementById('birthdayImage').src = images[currentIndex];
+
+  if (currentIndex === images.length - 1) {
+    document.getElementById('finalText').style.display = 'block';
+  }
+}
+
+setInterval(changeImage, 3000); // Cambia la imagen cada 3 segundos
+</script>
+</body>
+</html>
